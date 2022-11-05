@@ -4,9 +4,10 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :province
-      t.integer :phone
-      t.string :email
-      t.string :orders
+      t.integer :phone_number
+      t.string :email_address
+      t.string :order
+      t.string :password
 
       t.timestamps
     end

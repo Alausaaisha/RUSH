@@ -15,10 +15,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061325) do
     t.string "name"
     t.string "address"
     t.string "province"
-    t.string "menu"
-    t.text "description"
-    t.integer "rating"
-    t.integer "price"
+    t.string "food_name"
+    t.integer "restaurant_rating"
+    t.integer "food_price"
+    t.string "food_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061325) do
   create_table "riders", force: :cascade do |t|
     t.string "name"
     t.string "province"
-    t.integer "phone"
-    t.integer "fee"
+    t.integer "phone_number"
+    t.integer "delivery_fee"
     t.integer "user_id"
     t.integer "restaurant_id"
     t.datetime "created_at", null: false
@@ -40,9 +40,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061325) do
     t.string "name"
     t.string "address"
     t.string "province"
-    t.integer "phone"
-    t.string "email"
-    t.string "orders"
+    t.integer "phone_number"
+    t.string "email_address"
+    t.string "order"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

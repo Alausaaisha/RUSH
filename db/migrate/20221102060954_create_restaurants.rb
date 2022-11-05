@@ -4,10 +4,10 @@ class CreateRestaurants < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :province
-      t.string :menu
-      t.text :description
-      t.integer :rating
-      t.integer :price
+      t.string :food_name
+      t.integer :restaurant_rating
+      t.integer :food_price
+      t.string :food_image
 
       t.timestamps
     end
