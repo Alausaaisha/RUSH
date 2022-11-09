@@ -6,10 +6,12 @@ class UsersController < ApplicationController
     end
     
     def create
-        user = User.create!(user_params)
-        render json: user, include: :rider, except: [:created_at, :updated_at], status: :created
-    rescue ActiveRecord::RecordInvalid => e
-        render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+        user = User.create(user_params)
+        if user.valid?
+            render json: user, except: [:created_at, :updated_at], status: :created
+        else
+            render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+        end
     end
 
     def show
@@ -44,6 +46,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name, :address, :phone_number, :email_address, :province, :password)
+        params.permit(:name, :address, :phone_number, :email_address, :province, :password, :password_confirmation)
     end
 end

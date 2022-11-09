@@ -49,8 +49,8 @@ restaurant2 = Restaurant.create!(
         restaurant_rating: 80
       }
   )
-# user1 = User.create(name: "Temi", province: "Surulere", address: "Surulere", phone_number: 1034112456711, email_address: "abed-e@met.com", password: "1234556789120")
-# user2 = User.create(name: "Febi", province: "Eti-Osa", address: "Lekki Phase 1", phone_number: 0323223456711, email_address: "cdede@met.com", password: "1234556489130")
+user1 = User.create(name: "Temi", province: "Surulere", address: "Surulere", phone_number: 1034112456711, email_address: "abed-e@met.com", password: "1234556789120")
+user2 = User.create(name: "Febi", province: "Eti-Osa", address: "Lekki Phase 1", phone_number: 0323223456711, email_address: "cdede@met.com", password: "1234556489130")
 
-# rider1 = Rider.create(restaurant_id: restaurant1.id, user_id: user1.id << [:id], delivery_fee: 500, province: restaurant1.province, phone_number: 07123456730, name: "Seyi")
-# rider2 = Rider.create(restaurant_id: restaurant2.id, user_id: user2.id, delivery_fee: 700, province: restaurant2.province, phone_number: 07023456721, name: "Tayo")
+rider1 = Rider.create(restaurant_id: restaurant1.id, user_id: user1.id, delivery_fee: 1000, province: restaurant1.province, phone_number: 07123456730, name: "Seyi")
+rider2 = Rider.create(restaurant_id: restaurant2.id, user_id: user2.id, delivery_fee: 900, province: restaurant2.province, phone_number: 07023456721, name: "Tayo")

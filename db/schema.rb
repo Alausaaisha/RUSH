@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_061325) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_012709) do
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.integer "price"
+    t.text "description"
+    t.integer "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_foods_on_restaurant_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "province"
-    t.string "food_name"
     t.integer "restaurant_rating"
-    t.integer "food_price"
-    t.string "food_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,8 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_061325) do
     t.string "province"
     t.integer "phone_number"
     t.string "email_address"
-    t.string "order"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
